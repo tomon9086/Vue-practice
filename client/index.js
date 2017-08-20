@@ -1,11 +1,11 @@
 const Vue = require("vue")
-const helloVue = require("./hello.vue").default
-// const helloVue = Vue.extend(require("../client/hello.vue"))
-const hello = new Vue(helloVue).$mount("#hello")
-console.log(helloVue)
+const mainVue = require("./main.vue").default
+// const mainVue = Vue.extend(require("../client/main.vue"))
+const main = new Vue(mainVue).$mount("#vue")
+console.log(mainVue)
 // new Vue({
-// 	el: '#hello',
+// 	el: '#main',
 // 	data: {
-// 		message: 'Hello Vue!'
+// 		message: 'main Vue!'
 // 	}
 // })
