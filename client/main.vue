@@ -2,7 +2,8 @@
 	<div>
 		<Hello who="John"></Hello>
 		<Model></Model>
-		<List v-for="item in groceryList" v-bind:todo="item"></List>
+		<!-- <List v-bind:list="groceryList"></List> -->
+		<List v-for="item in list" v-bind:list="item"></List>
 	</div>
 </template>
 
@@ -17,7 +18,7 @@
 			List
 		},
 		data: {
-			groceryList: [
+			list: [
 				{ id: 0, text: 'Vegetables' },
 				{ id: 1, text: 'Cheese' },
 				{ id: 2, text: 'Whatever else humans are supposed to eat' }
