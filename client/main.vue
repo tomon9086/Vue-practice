@@ -13,6 +13,7 @@
 	const Model = require("./model.vue").default
 	const List = require("./list.vue").default
 	const VButton = require("./vbutton.vue").default
+	const $ = require("jquery")
 	module.exports = {
 		components: {
 			Hello,
@@ -29,13 +30,11 @@
 			vbuttonStates: {
 				clicked: false,
 				cb: function() {
-					console.log("hello", this.clicked)
+					// console.log("hello", this.clicked)
+					$.get("/", function(res) {
+						console.log(res)
+					})
 				}
-			}
-		},
-		methods: {
-			ccc: function() {
-				console.log(this.$data.vbuttonStates.clicked)
 			}
 		}
 	}

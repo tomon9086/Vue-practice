@@ -15,7 +15,7 @@
 		},
 		methods: {
 			reverseMessage: function() {
-				console.log(this)
+				// console.log(this)
 				this.$data.greeting = this.$data.greeting.split('').reverse().join('')
 			}
 		},
