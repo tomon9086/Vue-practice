@@ -9,7 +9,8 @@ app.use(logger())
 app.use(bodyParser())
 app.use(serve("./public"))
 
-app.use(route.get("/", async ctx => {
+app.use(route.get("/api", async ctx => {
+	ctx.body = "Hello!"
 }))
 
 app.listen(3000)
