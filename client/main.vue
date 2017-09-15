@@ -9,6 +9,7 @@
 </template>
 
 <script>
+	// const store = require("./store")
 	const Hello = require("./hello.vue").default
 	const Model = require("./model.vue").default
 	const List = require("./list.vue").default
@@ -32,6 +33,13 @@
 					console.log("hello", this.clicked)
 				}
 			}
+		},
+		computed: {
+			// setTestButtonCB: function() {
+			// 	this.$store.testButtonCB = function() {
+			// 		console.log("test button is clicked!")
+			// 	}
+			// }
 		},
 		methods: {
 			ccc: function() {
