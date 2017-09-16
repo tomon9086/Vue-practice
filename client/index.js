@@ -1,10 +1,10 @@
 // require("source-map-support").install()
 const Vue = require("vue")
 const Vuex = require("vuex")
-const mainVue = require("./main.vue").default
-// const mainVue = Vue.extend(require("../client/main.vue"))
-const main = new Vue(mainVue).$mount("#vue")
-// console.log(mainVue)
+const rootVue = require("./root.vue").default
+// const rootVue = Vue.extend(require("../client/root.vue"))
+const root = new Vue(rootVue).$mount("#vue")
+// console.log(rootVue)
 // new Vue({
 // 	el: '#main',
 // 	data: {
