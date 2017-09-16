@@ -7,7 +7,9 @@ const store = new Vuex.Store({
 	state: {
 		count: 0,
 		page: 0,
-		maxPage: 2
+		maxPage: 2,
+		// todoList: [],
+		todoList: [{text: "hoge"}, {text: "hogehoge"}, {text: "hogehogehoge"}]
 	},
 	mutations: {
 		testButton() {
@@ -21,6 +23,9 @@ const store = new Vuex.Store({
 		},
 		pageProceed() {
 			if(store.state.page < store.state.maxPage)store.state.page++
+		},
+		pushTodo(context, todo) {
+			store.state.todoList.push(todo)
 		}
 	},
 	getters: {
@@ -31,6 +36,9 @@ const store = new Vuex.Store({
 		},
 		getPageNumber() {
 			return store.state.page
+		},
+		getTodoList() {
+			return store.state.todoList
 		}
 	},
 	actions: {
@@ -47,6 +55,9 @@ const store = new Vuex.Store({
 		},
 		pageProceed() {
 			store.commit("pageProceed")
+		},
+		pushTodo(context, todo) {
+			store.commit("pushTodo", todo)
 		}
 	}
 })

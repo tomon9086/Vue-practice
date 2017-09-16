@@ -12,16 +12,20 @@
 		},
 		data: function() {
 			return {
-				text: "",
-				// todos: []
-				todos: [{text: "hoge"}, {text: "hogehoge"}, {text: "hogehogehoge"}]
+				text: ""
 			}
 		},
 		methods: {
 			add: function() {
-				console.log(this.text)
-				this.$data.todos.push({text: this.text})
+				// console.log(this.text)
+				const todoText = this.text
+				this.$store.dispatch("pushTodo", {text: todoText})
 				this.text = ""
+			}
+		},
+		computed: {
+			todos() {
+				return this.$store.getters.getTodoList
 			}
 		}
 	}
