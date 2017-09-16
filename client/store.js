@@ -3,16 +3,26 @@ const Vuex = require("vuex")
 
 Vue.use(Vuex)
 
-module.exports = new Vuex.Store({
+const store = new Vuex.Store({
 	state: {
-		testButtonCB() {
-			console.log("test button is clicked!")
-		}
+		count: 0
 	},
 	mutations: {
+		testButton() {
+			store.state.count++
+		}
 	},
 	getters: {
+		testButton() {
+			return store.state.count
+		}
 	},
 	actions: {
+		testButton() {
+			store.commit("testButton")
+			console.log("test button is clicked!")
+		}
 	}
 })
+
+module.exports = store

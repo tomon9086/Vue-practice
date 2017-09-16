@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="button" v-on:click="clicked">
-			<span class="text">{{ text }}</span>
+			<span class="text">{{ text }} {{ buttonCount }}</span>
 		</div>
 	</div>
 </template>
@@ -13,8 +13,13 @@
 		props: ["text"],
 		methods: {
 			clicked: function() {
-				// console.log(this.$store)
-				this.$store.state.testButtonCB()
+				console.log(this.$store)
+				this.$store.dispatch("testButton")
+			}
+		},
+		computed: {
+			buttonCount() {
+				return this.$store.getters.testButton
 			}
 		}
 	}
