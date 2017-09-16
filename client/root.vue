@@ -4,7 +4,8 @@
 		<Model></Model>
 		<!-- <List v-bind:list="groceryList"></List> -->
 		<List v-for="item in list" v-bind:list="item"></List>
-		<VButton text="click me"></VButton>
+		<VButton text="click me" method="testButton"></VButton>
+		<VButton text="reset" method="resetButton"></VButton>
 	</div>
 </template>
 

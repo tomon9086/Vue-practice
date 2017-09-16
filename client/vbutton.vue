@@ -10,16 +10,16 @@
 	const store = require("./store")
 	module.exports = {
 		store,
-		props: ["text"],
+		props: ["text", "method"],
 		methods: {
 			clicked: function() {
 				console.log(this.$store)
-				this.$store.dispatch("testButton")
+				this.$store.dispatch(this.method)
 			}
 		},
 		computed: {
 			buttonCount() {
-				return this.$store.getters.testButton
+				return this.$store.getters[this.method]
 			}
 		}
 	}
@@ -30,6 +30,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-top: 20px;
 	}
 	.button {
 		user-select: none;
