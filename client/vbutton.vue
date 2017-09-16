@@ -7,16 +7,14 @@
 </template>
 
 <script>
-	const store = require("./store.js").default
+	const store = require("./store")
 	module.exports = {
 		store,
-		props: ["text", "states"],
+		props: ["text"],
 		methods: {
 			clicked: function() {
-				// this.states.clicked = !this.states.clicked
-				// this.states.cb()
-				console.log(this)
-				this.$store.testButtonCB()
+				// console.log(this.$store)
+				this.$store.state.testButtonCB()
 			}
 		}
 	}

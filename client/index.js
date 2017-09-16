@@ -1,3 +1,4 @@
+// require("source-map-support").install()
 const Vue = require("vue")
 const Vuex = require("vuex")
 const mainVue = require("./main.vue").default

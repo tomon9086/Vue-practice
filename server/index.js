@@ -1,3 +1,4 @@
+require("source-map-support").install()
 const Koa = require("koa")
 const logger = require("koa-logger")
 const serve = require("koa-static")

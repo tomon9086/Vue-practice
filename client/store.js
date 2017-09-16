@@ -4,7 +4,15 @@ const Vuex = require("vuex")
 Vue.use(Vuex)
 
 module.exports = new Vuex.Store({
-	// testButtonCB() {
-	// 	console.log("test button is clicked!")
-	// }
+	state: {
+		testButtonCB() {
+			console.log("test button is clicked!")
+		}
+	},
+	mutations: {
+	},
+	getters: {
+	},
+	actions: {
+	}
 })
