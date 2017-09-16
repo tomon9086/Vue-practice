@@ -5,7 +5,9 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
 	state: {
-		count: 0
+		count: 0,
+		page: 0,
+		maxPage: 2
 	},
 	mutations: {
 		testButton() {
@@ -13,6 +15,12 @@ const store = new Vuex.Store({
 		},
 		resetButton() {
 			if(store.state.count)store.state.count = 0
+		},
+		pageBack() {
+			if(0 < store.state.page)store.state.page--
+		},
+		pageProceed() {
+			if(store.state.page < store.state.maxPage)store.state.page++
 		}
 	},
 	getters: {
@@ -20,6 +28,9 @@ const store = new Vuex.Store({
 			return store.state.count
 		},
 		resetButton() {
+		},
+		getPageNumber() {
+			return store.state.page
 		}
 	},
 	actions: {
@@ -30,6 +41,12 @@ const store = new Vuex.Store({
 		resetButton() {
 			store.commit("resetButton")
 			console.log("count is reset!")
+		},
+		pageBack() {
+			store.commit("pageBack")
+		},
+		pageProceed() {
+			store.commit("pageProceed")
 		}
 	}
 })

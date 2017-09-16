@@ -1,49 +1,43 @@
 <template>
 	<div>
-		<Hello who="John"></Hello>
-		<Model></Model>
-		<!-- <List v-bind:list="groceryList"></List> -->
-		<List v-for="item in list" v-bind:list="item"></List>
-		<VButton text="click me" method="testButton"></VButton>
-		<VButton text="reset" method="resetButton"></VButton>
+		<Page0 v-if="isPage0"></Page0>
+		<Page1 v-if="isPage1"></Page1>
+		<Page2 v-if="isPage2"></Page2>
+		<ProceedButton></ProceedButton>
 	</div>
 </template>
 
 <script>
 	const store = require("./store")
-	const Hello = require("./hello.vue").default
-	const Model = require("./model.vue").default
-	const List = require("./list.vue").default
-	const VButton = require("./vbutton.vue").default
+	const Page0 = require("./page0.vue").default
+	const Page1 = require("./page1.vue").default
+	const Page2 = require("./page2.vue").default
+	const ProceedButton = require("./proceedButton.vue").default
 	module.exports = {
 		store,
 		components: {
-			Hello,
-			Model,
-			List,
-			VButton
+			Page0,
+			Page1,
+			Page2,
+			ProceedButton
 		},
-		data: {
-			list: [
-				{ id: 0, text: 'Vegetables' },
-				{ id: 1, text: 'Cheese' },
-				{ id: 2, text: 'Whatever else humans are supposed to eat' }
-			]
+		data: function() {
+			return {}
 		},
 		computed: {
-			// setTestButtonCB: function() {
-			// 	this.$store.state.testButtonCB = function() {
-			// 		console.log("test button is clicked!")
-			// 	}
-			// }
-		},
-		methods: {
-			ccc: function() {
-				console.log(this.$data.vbuttonStates.clicked)
+			isPage0() {
+				return this.$store.getters.getPageNumber === 0
+			},
+			isPage1() {
+				return this.$store.getters.getPageNumber === 1
+			},
+			isPage2() {
+				return this.$store.getters.getPageNumber === 2
 			}
 		}
 	}
 </script>
 
 <style scoped>
+	
 </style>
