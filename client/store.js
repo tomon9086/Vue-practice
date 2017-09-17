@@ -9,7 +9,7 @@ const store = new Vuex.Store({
 		page: 0,
 		maxPage: 2,
 		// todoList: [],
-		todoList: [{text: "hoge"}, {text: "hogehoge"}, {text: "hogehogehoge"}]
+		todoList: [{id: 0, text: "hoge", done: false}, {id: 1, text: "hogehoge", done: false}, {id: 2, text: "hogehogehoge", done: false}]
 	},
 	mutations: {
 		testButton() {
@@ -26,6 +26,9 @@ const store = new Vuex.Store({
 		},
 		pushTodo(context, todo) {
 			store.state.todoList.push(todo)
+		},
+		todoCheckboxChanged(context, id) {
+			store.state.todoList[id].done = !store.state.todoList[id].done
 		}
 	},
 	getters: {
@@ -61,6 +64,9 @@ const store = new Vuex.Store({
 		},
 		pushTodo(context, todo) {
 			store.commit("pushTodo", todo)
+		},
+		todoCheckboxChanged(context, id) {
+			store.commit("todoCheckboxChanged", id)
 		}
 	}
 })

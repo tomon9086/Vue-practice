@@ -12,14 +12,15 @@
 		},
 		data: function() {
 			return {
-				text: ""
+				text: "",
+				todoID: this.$store.getters.getTodoList.slice(-1)[0].id
 			}
 		},
 		methods: {
 			add: function() {
 				// console.log(this.text)
-				const todoText = this.text
-				this.$store.dispatch("pushTodo", {text: todoText})
+				this.$data.todoID++
+				this.$store.dispatch("pushTodo", {id: this.$data.todoID, text: this.text, done: false})
 				this.text = ""
 			}
 		},

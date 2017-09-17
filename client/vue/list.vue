@@ -1,13 +1,19 @@
 <template>
-	<div class="list"><input type="checkbox" v-model="isChecked" /> <span :class="{ 'disactive': isChecked }">{{ list.text }}</span></div>
+	<div class="list"><input type="checkbox" v-on:change="changed" :checked="isChecked" /> <span :class="{ 'disactive': isChecked }">{{ list.text }}</span></div>
 </template>
 
 <script>
 	module.exports = {
 		props: ["list"],
-		data() {
-			return {
-				isChecked: false
+		methods: {
+			changed() {
+				this.$store.dispatch("todoCheckboxChanged", this.list.id)
+				console.log(this.$store.getters.getTodoList)
+			}
+		},
+		computed: {
+			isChecked() {
+				return this.$store.getters.getTodoList[this.list.id].done
 			}
 		}
 	}
