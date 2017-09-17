@@ -14,7 +14,7 @@
 </template>
 
 <script>
-	const store = require("./store")
+	const store = require("../store.js")
 	const Page0 = require("./page0.vue").default
 	const Page1 = require("./page1.vue").default
 	const Page2 = require("./page2.vue").default

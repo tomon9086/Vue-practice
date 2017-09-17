@@ -13,10 +13,6 @@
 
 <script>
 	module.exports = {
-		data: function() {
-			return {
-			}
-		},
 		methods: {
 			back() {
 				this.$store.dispatch("pageBack")
@@ -27,10 +23,10 @@
 		},
 		computed: {
 			canPageBack() {
-				return 0 < this.$store.state.page
+				return 0 < this.$store.getters.getPageNumber
 			},
 			canPageProceed() {
-				return this.$store.state.page < this.$store.state.maxPage
+				return this.$store.getters.getPageNumber < this.$store.getters.getMaxPageNumber
 			}
 		}
 	}

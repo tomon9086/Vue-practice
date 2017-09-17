@@ -37,6 +37,9 @@ const store = new Vuex.Store({
 		getPageNumber() {
 			return store.state.page
 		},
+		getMaxPageNumber() {
+			return store.state.maxPage
+		},
 		getTodoList() {
 			return store.state.todoList
 		}

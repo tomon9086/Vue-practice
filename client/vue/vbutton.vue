@@ -7,9 +7,7 @@
 </template>
 
 <script>
-	const store = require("./store")
 	module.exports = {
-		store,
 		props: ["text", "method"],
 		methods: {
 			clicked: function() {
