@@ -15,9 +15,9 @@
 
 <style scoped>
 	.list {
-		margin: 10px 3px 3px 20px
+		margin: 10px 3px 3px 20px;
 	}
 	.disactive {
-		color: #CCC
+		color: #CCC;
 	}
 </style>
