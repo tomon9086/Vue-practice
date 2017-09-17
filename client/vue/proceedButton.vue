@@ -1,12 +1,16 @@
 <template>
-	<div class="container">
-		<div class="back" v-on:click="back" v-show="canPageBack">
-			<div class="sankaku"></div>
-			<span class="backText">Back</span>
+	<div class="outside-container">
+		<div class="inside-container">
+			<div class="back" v-on:click="back" v-show="canPageBack">
+				<div class="sankaku"></div>
+				<span class="backText">Back</span>
+			</div>
 		</div>
-		<div class="proceed" v-on:click="proceed" v-show="canPageProceed">
-			<div class="sankaku"></div>
-			<span class="proceedText">Next</span>
+		<div class="inside-container">
+			<div class="proceed" v-on:click="proceed" v-show="canPageProceed">
+				<div class="sankaku"></div>
+				<span class="proceedText">Next</span>
+			</div>
 		</div>
 	</div>
 </template>
@@ -33,11 +37,15 @@
 </script>
 
 <style scoped>
-	.container {
+	.outside-container {
+		display: flex;
+		margin-top: 20px;
+	}
+	.inside-container {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		margin-top: 40px;
+		width: 50%;
 	}
 	.back {
 		--padding: 5px;
