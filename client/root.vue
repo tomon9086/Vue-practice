@@ -49,7 +49,6 @@
 		min-height: 100%;
 		display: flex;
 		flex-direction: column;
-
 	}
 	.header {
 		background-color: #373;
