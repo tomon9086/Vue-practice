@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<div class="container">
 		<div class="header"><h3>Vue Practice</h3></div>
-		<div class="container">
+		<div class="content">
 			<Page0 v-if="isPage0"></Page0>
 			<Page1 v-if="isPage1"></Page1>
 			<Page2 v-if="isPage2"></Page2>
@@ -45,24 +45,26 @@
 </script>
 
 <style scoped>
+	.container {
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+
+	}
 	.header {
 		background-color: #373;
 		color: #FFF;
 		padding: 5px 10px 5px 10px;
 	}
-	.container {
-		width: 100%;
-		position: relative;
-		min-height: 100%;
+	.content {
+		flex-grow: 1;
 	}
 	.footer {
 		background-color: #373;
 		color: #FFF;
-		/*height: 140px;*/
+		padding-top: 15px;
 		padding-bottom: 10px;
 		width: 100%;
-		position: absolute;
-		bottom: 0;
 	}
 	.copyright {
 		padding: 5px;
