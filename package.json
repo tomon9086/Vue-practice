@@ -21,8 +21,8 @@
     "webpack": "^3.5.5"
   },
   "scripts": {
-    "start": "nodemon --watch ./server ./server/index.js",
-    "build": "webpack --watch",
+    "start": "sudo nodemon --watch ./server ./server/index.js",
+    "build": "sudo webpack --watch",
     "start:prd": "sudo forever start ./server/index.js",
     "stop:prd": "sudo forever stop ./server/index.js",
     "flist": "forever list"
