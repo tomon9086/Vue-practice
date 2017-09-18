@@ -1,7 +1,7 @@
 module.exports = {
     entry: "./client/index.js",
     output: {
-        filename: "./public/index.js"
+        filename: "./public/vue-practice/index.js"
     },
     resolve: {
         alias: {
