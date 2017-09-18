@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<p>{{ message }}</p>
-		<p><input v-model="input" v-on:keydown="changed"></p>
+		<p><input v-model="input" v-on:keydown="changed" v-on:keyup="changed" v-on:change="changed"></p>
 		<!-- はたして正しいのか -->
 	</div>
 </template>
