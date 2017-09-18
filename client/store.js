@@ -9,7 +9,13 @@ const store = new Vuex.Store({
 		page: 0,
 		maxPage: 2,
 		// todoList: [],
-		todoList: [{id: 0, text: "hoge", done: false}, {id: 1, text: "hogehoge", done: false}, {id: 2, text: "hogehogehoge", done: false}]
+		todoList: [
+			{id: 0, text: "hoge", done: false},
+			{id: 1, text: "hogehoge", done: false},
+			{id: 2, text: "hogehogehoge", done: false}
+		],
+		greeting: "Hello",
+		modelVueMessage: "Hello Vue!"
 	},
 	mutations: {
 		testButton() {
@@ -29,6 +35,12 @@ const store = new Vuex.Store({
 		},
 		todoCheckboxChanged(context, id) {
 			store.state.todoList[id].done = !store.state.todoList[id].done
+		},
+		reverseGreeting() {
+			store.state.greeting = store.state.greeting.split('').reverse().join('')
+		},
+		changeModelVueMessage(context, input) {
+			store.state.modelVueMessage = input
 		}
 	},
 	getters: {
@@ -45,6 +57,12 @@ const store = new Vuex.Store({
 		},
 		getTodoList() {
 			return store.state.todoList
+		},
+		getGreeting() {
+			return store.state.greeting
+		},
+		getModelVueMessage() {
+			return store.state.modelVueMessage
 		}
 	},
 	actions: {
@@ -67,6 +85,12 @@ const store = new Vuex.Store({
 		},
 		todoCheckboxChanged(context, id) {
 			store.commit("todoCheckboxChanged", id)
+		},
+		reverseGreeting() {
+			store.commit("reverseGreeting")
+		},
+		changeModelVueMessage(context, input) {
+			store.commit("changeModelVueMessage", input)
 		}
 	}
 })

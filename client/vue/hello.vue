@@ -8,20 +8,18 @@
 <script>
 	module.exports = {
 		props: ["who"],
-		data: function() {
-			return {
-				greeting: "Hello"
-			}
-		},
 		methods: {
 			reverseMessage: function() {
 				console.log(this)
-				this.$data.greeting = this.$data.greeting.split('').reverse().join('')
+				this.$store.dispatch("reverseGreeting")
 			}
 		},
 		computed: {
 			target: function() {
 				return this.who !== undefined ? this.who : "World"
+			},
+			greeting() {
+				return this.$store.getters.getGreeting
 			}
 		}
 	}
