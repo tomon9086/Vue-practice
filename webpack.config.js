@@ -9,7 +9,7 @@ module.exports = {
 		]
 	},
 	output: {
-		filename: "./public/index.js",
+		filename: "./public/vue-practice/index.js",
 		publicPath: "/public/"
 	},
 	resolve: {
