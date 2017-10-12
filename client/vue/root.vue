@@ -5,6 +5,7 @@
 			<Page0 v-if="isPage0"></Page0>
 			<Page1 v-if="isPage1"></Page1>
 			<Page2 v-if="isPage2"></Page2>
+			<Page3 v-if="isPage3"></Page3>
 		</div>
 		<div class="root-footer">
 			<ProceedButton></ProceedButton>
@@ -18,6 +19,7 @@
 	const Page0 = require("./page0.vue").default
 	const Page1 = require("./page1.vue").default
 	const Page2 = require("./page2.vue").default
+	const Page3 = require("./page3.vue").default
 	const ProceedButton = require("./proceedButton.vue").default
 	module.exports = {
 		store,
@@ -25,6 +27,7 @@
 			Page0,
 			Page1,
 			Page2,
+			Page3,
 			ProceedButton
 		},
 		data: function() {
@@ -39,6 +42,9 @@
 			},
 			isPage2() {
 				return this.$store.getters.getPageNumber === 2
+			},
+			isPage3() {
+				return this.$store.getters.getPageNumber === 3
 			}
 		}
 	}
@@ -57,6 +63,7 @@
 	}
 	.root-content {
 		flex-grow: 1;
+		padding: 20px;
 	}
 	.root-footer {
 		background-color: #373;

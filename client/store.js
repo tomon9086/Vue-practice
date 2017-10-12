@@ -7,7 +7,7 @@ const store = new Vuex.Store({
 	state: {
 		count: 0,
 		page: 0,
-		maxPage: 2,
+		maxPage: 3,
 		// todoList: [],
 		todoList: [
 			{id: 0, text: "hoge", done: false},

@@ -23,6 +23,7 @@
   "scripts": {
     "start": "nodemon --watch ./server ./server/index.js",
     "dev": "node ./server/devserver.js",
-    "build": "webpack --watch"
+    "watch": "webpack --watch",
+    "build": "webpack"
   }
 }

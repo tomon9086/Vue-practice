@@ -3,8 +3,8 @@ const webpack = require("webpack")
 module.exports = {
 	entry: {
 		app: [
-			"webpack-dev-server/client?http://localhost:3001",
-			"webpack/hot/dev-server",
+			// "webpack-dev-server/client?http://localhost:3001",
+			// "webpack/hot/dev-server",
 			"./client/index.js"
 		]
 	},
@@ -24,6 +24,6 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		// new webpack.HotModuleReplacementPlugin()
 	]
 }
