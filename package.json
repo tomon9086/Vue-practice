@@ -26,6 +26,6 @@
     "build": "sudo webpack --watch",
     "start:prd": "sudo forever start ./server/index.js",
     "stop:prd": "sudo forever stop ./server/index.js",
-    "flist": "forever list"
+    "flist": "sudo forever list"
   }
 }
