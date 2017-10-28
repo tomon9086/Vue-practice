@@ -10,9 +10,11 @@
 					</span>
 				</div>
 			</div>
-			<div :class="{ list, 'list-opened': isopen, 'list-closed': !isopen }">
-				<MenuList v-for="item in list" :item="item"></MenuList>
-			</div>
+			<transition name="list-fade">
+				<div v-if="isopen">
+					<MenuList v-for="item in list" :item="item"></MenuList>
+				</div>
+			</transition>
 		</div>
 	</div>
 </template>
@@ -51,6 +53,7 @@
 	}
 	.container > div {
 		width: 40%;
+		margin-bottom: 10px;
 	}
 	.list-title {
 		font-size: 17px;
@@ -67,16 +70,13 @@
 		/*align-items: center;*/
 		padding-bottom: 10px;
 	}
-	.list-closed {
-		height: 0;
-		font-size: 0;
-		opacity: 0;
-		padding: 0;
-		transition-property: opacity;
-		transition-duration: 0.1s;
+	.list-fade-enter-active {
+		transition: opacity .5s
 	}
-	.list-opened {
-		transition-property: opacity;
-		transition-duration: 0.4s;
+	.list-fade-leave-active {
+		transition: opacity .2s
+	}
+	.list-fade-enter, .list-fade-leave-to {
+		opacity: 0
 	}
 </style>
